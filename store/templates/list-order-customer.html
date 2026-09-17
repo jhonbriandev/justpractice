@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Lista de Pedidos por Clientes</h1>
+      <h2>{% for item in items %}</h2>
+      <h3>Numero de Orden#{{item.id}}</h3>
+      Productos: {% for product in item.products.all %} {{product.name}}
+      {%endfor %}
+      <li>Total del pedido: $/.{{item.total}}</li>
+      {% endfor %}
+    </div>
+  </body>
+</html>

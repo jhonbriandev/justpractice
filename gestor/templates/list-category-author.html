@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <h2>Lista Libros por Categorias y Usuarios</h2>
+      {% for item in items %}
+      <li>
+        {{item.title}}{% for category in item.categories.all %}
+        <ul>
+          CATEGORIA: {{category.name}}
+        </ul>
+        {% endfor %}
+        <ul>
+          AUTOR: {{item.author}}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
