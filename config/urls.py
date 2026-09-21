@@ -22,5 +22,8 @@ urlpatterns = [
     path('', include('gestor.urls')),
     path('business/', include('business.urls')),
     path('store/', include('store.urls')),
-    # path('post/', include('post.urls')),
+    path('post/', include('post.urls')),
+    path('office/', include('office.urls')),
+    path('outlet/', include('outlet.urls')),
+    path('market/', include('market.urls')),
 ]

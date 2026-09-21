@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Tienda, Region, Producto</h1>
+      {% for item in items %}
+      <h2>Nombre de Tienda</h2>
+      {{item.name}}
+      <h3>Region perteneciente</h3>
+      {{item.region.name}}
+      <h5>
+        Productos por tienda :{% for product in item.products.all %}
+        {{product.name}} {% endfor %}
+      </h5>
+      {% endfor %}
+    </div>
+  </body>
+</html>

@@ -13,6 +13,9 @@ class OrderCustomerQuerySet(models.QuerySet):
 
     def with_customer(self):
         # Encapsulamos select_related() para reutilizar esta consulta.
+        # Permite obtener los datos de Customer mediante un JOIN,
+        # manteniendo el resultado como un QuerySet de Order.
+        # self representa el QuerySet actual obtenido desde el Manager (objects). EJ: objects.all()
         return self.select_related("customer")
 
 
@@ -41,7 +44,7 @@ class Order(models.Model):
     )
 
     def __str__(self):
-        return f"Numero de Orden #{self.customer.id}"
+        return f"Numero de Orden #{self.id}"
 
     # Managers personalizados basados en los QuerySets anteriores.
     objectsc = OrderCustomerQuerySet.as_manager()

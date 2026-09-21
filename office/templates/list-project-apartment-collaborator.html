@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Lista de Proyectos, Apartamentos y sus Colaboradores</h1>
+      {% for item in items %}
+      <h2>Nombre del Proyecto: {{item.name}}</h2>
+      <ul>
+        Nombre del Apartamento asignado: {{item.apartment.name}}
+      </ul>
+      <ul>
+        Colaboradores: {% for collaborator in item.collaborators.all %}
+        <li>{{collaborator.name}}</li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+  </body>
+</html>

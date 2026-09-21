@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Articulos y sus Etiquetas</h1>
+      <!-- Primer for: recorremos el QuerySet de Articles -->
+      {% for item in items %}
+      <h2>{{item.name}}</h2>
+      <!--
+        Segundo for: recorremos las etiquetas relacionadas con este Article.
+        .all permite obtener todos los objetos Label relacionados.
+        -->
+      Etiquetas : {% for label in item.labels.all %}{{label.name}} {% endfor %}
+      <h2>Autor :{{item.author.name}}</h2>
+      {% endfor %}
+    </div>
+  </body>
+</html>
