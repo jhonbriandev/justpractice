@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Lista de Pedidos, Clientes y sus Productos Comprados</h1>
+      {% for item in items %}
+      <h3>Pedido Numero: #{{item.id}}</h3>
+      <h4>Nombre del cliente: {{item.customer}}</h4>
+      {% for product in item.products.all %}
+      <li>{{product.name}}</li>
+      {% endfor %}
+      <!-- Esto ejecutara el metodo que creamos en el modelo -->
+      <!-- <h5>Total Calculado por metodo: $/.{{item.total_products}}</h5> -->
+      <h5>Total Calculado: $/.{{item.total}}</h5>
+      {% if item.is_confirmed %}
+      <h6>Pedido Confirmado</h6>
+      {% endif %} {% endfor %}
+    </div>
+  </body>
+</html>

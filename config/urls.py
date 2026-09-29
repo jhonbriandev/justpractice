@@ -26,4 +26,5 @@ urlpatterns = [
     path('office/', include('office.urls')),
     path('outlet/', include('outlet.urls')),
     path('market/', include('market.urls')),
+    path('school/', include('school.urls')),
 ]

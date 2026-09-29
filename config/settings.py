@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'office',
     'outlet',
     'market',
+    'school',
 ]
 
 MIDDLEWARE = [
